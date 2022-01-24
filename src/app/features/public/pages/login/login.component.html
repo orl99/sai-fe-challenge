@@ -1,0 +1,25 @@
+<div class="login-main-container">
+  <mat-card>
+    <mat-card-content class="login-card-container">
+      <div class="login-logo">
+        <img src="assets/forbes-logo-7-1.png" alt="forbes logo">
+      </div>
+      <div *ngIf="authError" class="login-error">
+        <span>
+          {{errorMessage}}
+        </span>
+      </div>
+      <form [formGroup]="loginForbaseForm" novalidate (ngSubmit)="login()" class="login-form-container">
+        <mat-form-field appearance="outline">
+          <mat-label>Username</mat-label>
+          <input formControlName="username" matInput placeholder="Username">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Password</mat-label>
+          <input formControlName="password" type="password" matInput placeholder="Password">
+        </mat-form-field>
+        <button type="submit" mat-raised-button >LOGIN</button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

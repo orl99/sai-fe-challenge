@@ -1,0 +1,33 @@
+<div class="article-main-container">
+  <div class="articles-table" *ngIf="!!allArticles.length">
+    <mat-table [dataSource]="allArticles">
+      <!-- Title name Definition -->
+      <ng-container matColumnDef="title">
+        <mat-header-cell *matHeaderCellDef> Title </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.title}} </mat-cell>
+      </ng-container>
+
+      <!-- Author Definition -->
+      <ng-container matColumnDef="author">
+        <mat-header-cell *matHeaderCellDef> Author </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.author}} </mat-cell>
+      </ng-container>
+
+
+      <!-- Header and Row Declarations -->
+      <mat-header-row *matHeaderRowDef="['title', 'author']"></mat-header-row>
+      <!-- Orlando: click event or RouterLink?, well I created the two options -->
+      <!-- <mat-row  *matRowDef="let article; columns: ['title', 'author']" (click)="selectArticle(article.id)"></mat-row> -->
+      <mat-row  *matRowDef="let article; columns: ['title', 'author']"  [routerLink]="'/private/articles/' + article.id" ></mat-row>
+    </mat-table>
+  </div>
+  <!-- Contend -->
+  <div *ngIf="!!selectedArticle" class="articles-selected-articles">
+    <h2 class="align">{{selectedArticle.id}}</h2>
+    <p class="align">
+      {{selectedArticle.content}}
+    </p>
+  </div>
+   <!-- Contend -->
+
+</div>

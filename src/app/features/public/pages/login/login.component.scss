@@ -1,0 +1,52 @@
+@import '/src/theme/mediaQueries.scss';
+.login-main-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  mat-card {
+    width: 80vw;
+    height: auto;
+    @include md {
+      width: 500px;
+      height: auto;
+    }
+  }
+}
+.login-logo {
+  width: 50%;
+  margin-bottom: 15px;
+  img {
+    width: 100%
+  }
+}
+
+.login-form-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  mat-form-field {
+    width: 250px;
+    @include md{
+      width: 300px;
+
+    }
+  }
+}
+
+.login-card-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+}
+
+.login-error {
+  width: 50%;
+  background-color: rgb(252, 149, 166);
+  color: black;
+  padding: 7px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
